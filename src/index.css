@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -11,7 +13,7 @@
 
 .header__logo {
   /*width: 1440px;*/
-  height: 114px;
+  height: 80px;
   margin: 0 0 70px;
   padding: 44px 0 5px 150px;
   box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
@@ -57,5 +59,94 @@
   border: solid 1px #1797ff;
   color: #1797ff;
 }
+.list{
+  width: 240px;
+  margin-left: 70px;
+  margin-top: 70px;
+}
+.list__placeholder{
+  height: 32px;
+  /*margin: 63px 114px 1px 150px;*/
+  padding: 5px 12px 5px 12px;
+  border-radius: 4px;
+  border: solid 1px #2e2e2e;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
 
+}
 
+.list__placeholder__text{
+  height: 22px;
+  /*margin: 0 19px 0 0;*/
+  padding: 3px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #343434;
+}
+
+.list__placeholder__icon{
+  height: 32px;
+  /*margin: 63px 114px 1px 150px;*/
+  padding: 5px 12px 5px 12px;
+  border-radius: 4px;
+}
+
+.list__icon{
+  border: solid #2e2e2e;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.list__icon--active{
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.list__options{
+  height: 180px;
+  box-shadow: 0 2px 2px 0 #dad8d8;
+  background-color: #fff;
+}
+
+.list__option{
+  height: 40px;
+ /* margin: 45px 1px 48px 0;*/
+  padding: 10px;
+  display: flex;
+  /*opacity: 0.2;
+  background-color: #eaeaea;*/
+}
+
+.list__option:hover{
+  background-color: rgba(234, 234, 234, 0.3);
+}
+
+.list__option img{
+  width: 24px;
+  height: 24px;
+  margin: 6px 13px 0 0;
+  object-fit: contain;
+}
+
+.list__option p{
+  width: 43px;
+  height: 22px;
+  margin: 6px 60px 2px 6px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #343434;
+}

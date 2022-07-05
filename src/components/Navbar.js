@@ -1,8 +1,5 @@
-import {useState} from 'react'
 
-const Navbar = () => {
-  //state for adding active class
-  const [active,setActive] = useState('all')
+const Navbar = ({active,setActive}) => {
   return (
     <div className='navbar'>
         <div id="all" className={`navbar__button ${active === 'all' && 'navbar__button--active'}`} onClick={e=>setActive(e.target.id)}>
