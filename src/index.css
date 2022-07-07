@@ -14,8 +14,8 @@
 .header__logo {
   /*width: 1440px;*/
   height: 80px;
-  margin: 0 0 70px;
-  padding: 44px 0 5px 150px;
+  margin-bottom:40px;
+  padding: 44px 0 0 10%;
   box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
   background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
 }
@@ -59,10 +59,20 @@
   border: solid 1px #1797ff;
   color: #1797ff;
 }
+
+section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 10% 0 10%;
+  position: relative;
+}
+
 .list{
   width: 240px;
-  margin-left: 70px;
-  margin-top: 70px;
+  margin-top: 40px;
+  
 }
 .list__placeholder{
   height: 32px;
@@ -115,6 +125,9 @@
   height: 180px;
   box-shadow: 0 2px 2px 0 #dad8d8;
   background-color: #fff;
+  position: absolute;
+  width: 240px;
+  z-index: 2;
 }
 
 .list__option{
@@ -122,6 +135,7 @@
  /* margin: 45px 1px 48px 0;*/
   padding: 10px;
   display: flex;
+  position:relative;
   /*opacity: 0.2;
   background-color: #eaeaea;*/
 }
@@ -149,4 +163,95 @@
   line-height: 1.57;
   letter-spacing: normal;
   color: #343434;
+}
+
+.list__cards{
+  display: grid;
+  grid-row-gap: 40px;
+  margin-top: 40px;
+}
+
+@media only screen and (min-width: 800px) {
+  .list__cards{
+     grid-template-columns: 45% 45%;
+     grid-column-gap: 10%;
+     margin-top: 70px;
+
+  }
+  .header__logo {
+    margin-bottom:70px;
+  }
+  .list{
+    margin-top: 70px;
+  }
+}
+
+.card{
+  height: 90px;
+  /*margin: 18px 40px 30px 150px;*/
+  padding: 0 0 0 26px;
+  opacity: 0.8;
+  border-radius: 6px;
+  border: solid 1px #979797;
+  background-color: #fff;
+  display: flex;
+}
+
+.card:hover >*{
+  opacity: 0.6;
+}
+
+.card__information{
+  width: 80%;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.card__information__time{
+  margin-top: 6px;
+  font-family: Roboto;
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #767676;
+  display:flex ;
+  align-items: center;
+}
+
+.card__information__time p{
+  margin-left: 10px;
+}
+
+.card__information__description{
+  margin-top: 6px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+  color: #101010;
+}
+
+.card__button{
+  width: 20%;
+  height: 90px;
+  /*margin: 0 0 0 16px;*/
+  /*padding: 35px 22px 33px;*/
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-color: rgba(96, 96, 96, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor:pointer;
+}
+
+.card__button__imgHeart{
+  width: 24px;
+  height: 22px;
 }

@@ -27,10 +27,10 @@ const Selector = ({selector,setSelector}) => {
           </div>
           <div className='list__option'  onClick={()=>setSelector({
         active:false,
-        option: 'Reacts'
+        option: 'Reactjs'
       })}>
             <img src={imgReact} alt="img react" />
-            <p>Reacts</p>
+            <p>Reactjs</p>
           </div>
           <div className='list__option'  onClick={()=>setSelector({
         active:false,
