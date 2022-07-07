@@ -6,7 +6,7 @@
 }
 
 .App{
-  height: 1024px;
+  height: 100%;
   padding: 0 0 98px;
   background-color: #fcfcfc;
 }
@@ -171,21 +171,6 @@ section{
   margin-top: 40px;
 }
 
-@media only screen and (min-width: 800px) {
-  .list__cards{
-     grid-template-columns: 45% 45%;
-     grid-column-gap: 10%;
-     margin-top: 70px;
-
-  }
-  .header__logo {
-    margin-bottom:70px;
-  }
-  .list{
-    margin-top: 70px;
-  }
-}
-
 .card{
   height: 90px;
   /*margin: 18px 40px 30px 150px;*/
@@ -254,4 +239,173 @@ section{
 .card__button__imgHeart{
   width: 24px;
   height: 22px;
+}
+
+.paginator{
+  display: flex;
+  justify-content: center;
+}
+
+.paginator__infinite{
+  width: 32px;
+  height: 32px;
+  display: flex;
+  padding-top: 6px;
+  align-items:flex-end;
+  justify-content: center;
+}
+
+.paginator__item{
+  width: 32px;
+  height: 32px;
+  margin: 0 8px;
+  padding: 6px 12px 4px;
+  border-radius: 6px;
+  border: solid 1px #d9d9d9;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2e2e2e;
+  font-family: Roboto;
+}
+.paginator__item:hover{
+  background-color: hsla(209, 100%, 55%, 0.478);
+  color: white;
+}
+.paginator__item--active{
+  background-color: #1890ff;
+  color: white;
+  transition: 0.5s;
+}
+
+.paginator__icon__prev{
+  border: solid #2e2e2e;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.paginator__icon__next{
+  border: solid #2e2e2e;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.paginator__item--disabled{
+  pointer-events:none;
+  opacity: .3;
+}
+
+.paginator__item--remove{
+  display:none;
+}
+
+footer{
+  margin-top: 70px;
+}
+
+@media only screen and (min-width: 800px) {
+  .list__cards{
+     grid-template-columns: 45% 45%;
+     grid-column-gap: 10%;
+     margin-top: 70px;
+
+  }
+  .header__logo {
+    margin-bottom:70px;
+  }
+  .list{
+    margin-top: 70px;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 990px) {
+  .card{
+    padding: 0 0 0 8px;
+  }
+  
+  .card__information{
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .card__information__time{
+    font-size: 10px;
+  }
+  
+  .card__information__description{
+    font-size: 12.5px;
+  }
+  
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 500px){
+  .card{
+    padding: 0 0 0 8px;
+  }
+  
+  .card__information{
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .card__information__time{
+    font-size: 10px;
+  }
+  
+  .card__information__description{
+    font-size: 12.5px;
+  }
+  
+}
+
+@media only screen and (min-width: 450px) and (max-width: 600px){
+  
+  .paginator__infinite{
+    width: 20px;
+    height: 20px;
+    padding-top: 10px;
+  }
+
+  .paginator__item{
+    width: 20px;
+    height: 20px;
+    margin: 0 6px;
+  }
+  .paginator__icon__prev{
+    padding: 2px;
+  }
+  
+  .paginator__icon__next{
+    padding: 2px;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  
+  .paginator__infinite{
+    width: 10px;
+    height: 10px;
+    padding-top: 12px;
+  }
+
+  .paginator__item{
+    width: 10px;
+    height: 10px;
+    margin: 0 1px;
+  }
+  .paginator__icon__prev{
+    padding: 2px;
+  }
+  
+  .paginator__icon__next{
+    padding: 2px;
+  }
 }

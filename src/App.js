@@ -2,10 +2,14 @@ import Logo from './components/Logo.js'
 import Navbar from './components/Navbar'
 import Selector from './components/Selector'
 import NewsList from './components/NewsList'
+import Paginator from './components/Paginator'
 
 import {useState, useEffect} from 'react'
 function App() {
 
+  //get the information of the local storage of the selector 
+  //active validate the display of the elements
+  //option is the selected element (react,angular or vue)
   let storeSelector = JSON.parse(localStorage.getItem('selector'));
   if(!storeSelector){
     storeSelector = {
@@ -27,7 +31,7 @@ function App() {
     option // the selected option of the dropdown
   */
 
-  const [selectedPage, setSelectedPage] = useState(0)
+  const [selectedPage, setSelectedPage] = useState(1)
   const [selector,setSelector] = useState(storeSelector)
 
   //all current data of the news in page
@@ -41,6 +45,7 @@ function App() {
   const [likesNews, setLikesNews] = useState(storeLikedNews)
 
   useEffect(()=>{
+    if(activeNav === 'all')
       if(selector.option !== 'Select your news')
       {
         //call to the api
@@ -56,8 +61,7 @@ function App() {
 
   //function for obtain the data of the news
   const setData = async () =>{
-
-      let response =  await fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${(selector.option).toLowerCase()}&page=${selectedPage}`);
+      let response =  await fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${(selector.option).toLowerCase()}&page=${Number(selectedPage) - 1}`);
       let data = await response.json()
       let likesFiltered = likesNews.filter(like => like.type === (selector.option).toLowerCase())
       
@@ -178,7 +182,7 @@ function App() {
               </section>
             }  
         <footer>
-
+          <Paginator currentPage={selectedPage} setCurrentPage={setSelectedPage} totalPages={50}/>
         </footer>
     </div>
   );
