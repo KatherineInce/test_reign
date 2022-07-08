@@ -72,7 +72,7 @@ section{
 .list{
   width: 240px;
   margin-top: 40px;
-  
+  cursor: pointer;
 }
 .list__placeholder{
   height: 32px;
@@ -268,6 +268,7 @@ section{
   justify-content: center;
   color: #2e2e2e;
   font-family: Roboto;
+  cursor: pointer;
 }
 .paginator__item:hover{
   background-color: hsla(209, 100%, 55%, 0.478);
@@ -304,6 +305,50 @@ section{
 
 .paginator__item--remove{
   display:none;
+}
+
+.message{
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  font-family: Roboto;
+  font-size: 22px;
+  color: rgba(46, 46, 46, 0.667);
+}
+.inline{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.loading{
+  margin:0 15px 0 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(144, 144, 144);
+  animation-name: loading; 
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-duration: 0.7s;
+}
+
+@keyframes loading{
+  0%{
+    transform: scale(1);
+  }
+  25%{
+    transform: scale(.8);
+  }
+  50%{
+    transform: scale(.6);
+  }
+  75%{
+    transform: scale(.4);
+  }
+  100%{
+    transform: scale(.2);
+  }
 }
 
 footer{
@@ -367,7 +412,9 @@ footer{
 }
 
 @media only screen and (min-width: 450px) and (max-width: 600px){
-  
+  .message{
+    font-size: 18px;
+  }
   .paginator__infinite{
     width: 20px;
     height: 20px;
@@ -389,7 +436,10 @@ footer{
 }
 
 @media only screen and (max-width: 450px){
-  
+  .message{
+    font-size: 16px;
+    text-align: center;
+  }
   .paginator__infinite{
     width: 10px;
     height: 10px;
